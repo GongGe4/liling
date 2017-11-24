@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./心图/animate.min.css">
     <style>
         body {
+            width: 100%;
             background: #000;
             height: 100vh;
             overflow: hidden;
@@ -927,7 +928,7 @@
         
         .img {
             position: absolute;
-            top: 40%;
+            top: 33%;
             left: 50%;
         }
         
@@ -961,8 +962,20 @@
         .img_list {
             position: absolute;
             bottom: 10%;
-            left: 10%;
-            word-wrap: nowrap;
+            left: 0;
+            /* word-wrap: nowrap; */
+        }
+        
+        .img_list2 {
+            position: absolute;
+            bottom: 10%;
+            right: 0;
+            /* word-wrap: nowrap; */
+        }
+        
+        .img_li {
+            display: block;
+            height: 30%;
         }
     </style>
 </head>
@@ -1440,9 +1453,23 @@
         <span class="desc anqi">永<br>远<br>十<br>八</span>
     </div>
 
-    <div class="img"><img src="./心图/dangao.jpg" alt="" class="animated infinite zoomIn"></div>
+    <div class="img">
+        <img src="./心图/li_1.jpg" alt="" class="animated infinite img_li" id="img">
+    </div>
 
-    </div> -->
+    <script>
+        (function() {
+            console.log(1);
+            var img = document.getElementById('img');
+            var _index = 1;
+            setInterval(function() {
+                if (_index > 6) _index = 1;
+                var src = './心图/li_' + _index + '.jpg';
+                img.setAttribute('src', src);
+                _index++;
+            }, 1500);
+        })();
+    </script>
 </body>
 
 </html>
